@@ -14,4 +14,12 @@ test.describe('Finding different elements using raw locators', () => {
         await expect(elementLocator).toBeVisible();
         await expect(elementLocator).toHaveText(expectedMessage);
     })
+    test('Find label element by ID Xpath', async ({ page }) => {
+        const elementSelector = "//*[@id='id-label-element']";
+        const elementLocator = page.locator(elementSelector);
+        const expectedMessage = 'Some text for label';
+
+        await expect(elementLocator).toBeVisible();
+        await expect(elementLocator).toHaveText(expectedMessage);
+    })
 });
